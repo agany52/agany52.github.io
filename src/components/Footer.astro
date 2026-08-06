@@ -1,0 +1,26 @@
+---
+import { withBase } from '../lib/urls';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="section-shell footer-grid">
+    <div>
+      <a class="brand footer-brand" href={withBase('')}>
+        <span class="brand-mark" aria-hidden="true">AG</span>
+        <span class="brand-name">Alec Gany</span>
+      </a>
+      <p>Healthcare analytics grounded in mathematics, technology, and frontline operations.</p>
+    </div>
+    <nav aria-label="Footer links">
+      <a href="mailto:agany524@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/alec-gany" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/agany52" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      <a href={withBase('resume/Alec_Gany_Healthcare_Analytics_Resume.pdf')} download>Résumé</a>
+    </nav>
+  </div>
+  <div class="section-shell footer-meta">
+    <p>© {year} Alec Gany</p>
+    <p>Built for clarity, accessibility, and independent hosting.</p>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+---
+interface Props {
+  compact?: boolean;
+  decorative?: boolean;
+}
+
+const { compact = false, decorative = false } = Astro.props;
+const accessibilityAttributes = decorative
+  ? { 'aria-hidden': true }
+  : {
+      role: 'img' as const,
+      'aria-label': 'Synthetic operational capacity profile. Four weather categories have similar utilization, while the weekend comparison is visibly higher than the weekday comparison.',
+    };
+---
+
+<div
+  class:list={['operations-figure', { compact }]}
+  {...accessibilityAttributes}
+>
+  <div class="figure-topline">
+    <span>Synthetic public reconstruction</span>
+    <span aria-hidden="true" class="live-dot"></span>
+  </div>
+
+  <div class="operations-grid">
+    <section aria-hidden="true">
+      <p>Scheduled utilization by weather</p>
+      <div class="weather-bars">
+        <div><i style="--value: 68%"></i><span>Mixed</span></div>
+        <div><i style="--value: 72%"></i><span>Dry</span></div>
+        <div><i style="--value: 73%"></i><span>Rain</span></div>
+        <div><i style="--value: 71%"></i><span>Snow</span></div>
+      </div>
+    </section>
+    <section aria-hidden="true">
+      <p>Constraint profile</p>
+      <div class="constraint-row">
+        <div>
+          <span>Weekday</span>
+          <i><b style="--value: 70%"></b></i>
+        </div>
+        <div>
+          <span>Weekend</span>
+          <i><b style="--value: 88%"></b></i>
+        </div>
+        <div>
+          <span>Platelet-heavy</span>
+          <i><b style="--value: 82%"></b></i>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <p class="synthetic-label">Illustrative pattern only · not source records</p>
+</div>

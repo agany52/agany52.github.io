@@ -1,0 +1,28 @@
+{
+  "name": "alec-gany-analytics-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test:site": "node scripts/verify-site.mjs",
+    "test:a11y": "node scripts/accessibility-check.mjs",
+    "test:responsive": "node scripts/responsive-check.mjs",
+    "test": "npm run check && npm run build && npm run test:site"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "7.1.6",
+    "sharp": "0.35.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.12.1",
+    "lighthouse": "13.4.1",
+    "playwright": "1.62.1",
+    "typescript": "6.0.3"
+  }
+}

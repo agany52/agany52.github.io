@@ -1,0 +1,42 @@
+---
+import ProjectVisual from './ProjectVisual.astro';
+import { withBase } from '../lib/urls';
+
+interface Props {
+  slug: string;
+  number: string;
+  title: string;
+  category: string;
+  summary: string;
+  evidence: string;
+  tools: string[];
+  visual: 'operations' | 'heart' | 'sega';
+  featured?: boolean;
+}
+
+const { slug, number, title, category, summary, evidence, tools, visual, featured = false } = Astro.props;
+---
+
+<article class:list={['project-card', { featured }]}>
+  {visual === 'operations' ? (
+    <div class="project-visual-link">
+      <ProjectVisual kind={visual} />
+    </div>
+  ) : (
+    <a class="project-visual-link" href={withBase(`projects/${slug}/`)} aria-label={`View ${title} case study`}>
+      <ProjectVisual kind={visual} />
+    </a>
+  )}
+  <div class="project-card-copy">
+    <p class="project-kicker">{number} · {category}</p>
+    <h3><a href={withBase(`projects/${slug}/`)}>{title}</a></h3>
+    <p class="project-evidence"><span>Evidence</span>{evidence}</p>
+    <p>{summary}</p>
+    <ul class="tag-list" aria-label={`${title} tools`}>
+      {tools.map((tool) => <li>{tool}</li>)}
+    </ul>
+    <a class="text-link" href={withBase(`projects/${slug}/`)}>
+      View case study <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>

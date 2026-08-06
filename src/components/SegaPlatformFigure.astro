@@ -1,0 +1,53 @@
+---
+interface Props {
+  compact?: boolean;
+  decorative?: boolean;
+}
+
+const { compact = false, decorative = false } = Astro.props;
+const total = 1402;
+const platforms = [
+  { label: 'PC', value: 391 },
+  { label: 'iOS', value: 119 },
+  { label: 'X360', value: 110 },
+  { label: 'Wii', value: 110 },
+  { label: 'PS3', value: 107 },
+  { label: 'PS4', value: 94 },
+  { label: 'Switch', value: 84 },
+  { label: 'Xbox One', value: 77 },
+];
+const remaining = total - platforms.reduce((sum, platform) => sum + platform.value, 0);
+const rows = compact ? platforms.slice(0, 5) : [...platforms, { label: '13 others', value: remaining }];
+const maxValue = platforms[0].value;
+const accessibilityAttributes = decorative
+  ? { 'aria-hidden': true }
+  : {
+      role: 'img' as const,
+      'aria-label': 'Horizontal bar chart of 1,402 historical Sega game records. PC is the largest individual platform group with 391 titles, followed by iOS with 119, Xbox 360 and Wii with 110 each, and PS3 with 107.',
+    };
+---
+
+<div class:list={['sega-platform-figure', { compact }]} {...accessibilityAttributes}>
+  <div class="sega-figure-heading">
+    <div>
+      <span>Historical portfolio mix</span>
+      <strong>Titles by platform</strong>
+    </div>
+    <p><b>1,402</b> cleaned records</p>
+  </div>
+
+  <div class="sega-platform-bars" aria-hidden="true">
+    {rows.map((platform) => (
+      <div class:list={['sega-platform-row', { aggregate: platform.label === '13 others' }]}>
+        <span>{platform.label}</span>
+        <i><b style={`--value: ${(platform.value / maxValue) * 100}%`}></b></i>
+        <strong>{platform.value}</strong>
+        {!compact && <small>{((platform.value / total) * 100).toFixed(1)}%</small>}
+      </div>
+    ))}
+  </div>
+
+  <p class="sega-figure-note">
+    {compact ? 'Top five individual platform groups' : 'Top eight platforms shown individually; the remaining 13 groups are combined.'}
+  </p>
+</div>

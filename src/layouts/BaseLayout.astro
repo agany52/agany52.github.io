@@ -1,0 +1,75 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { withBase } from '../lib/urls';
+
+interface Props {
+  title?: string;
+  description?: string;
+  imageAlt?: string;
+}
+
+const {
+  title = 'Alec Gany | Healthcare Analytics & Applied Data Science',
+  description = 'Alec Gany combines applied mathematics, healthcare technology, frontline operations, and practical analytics using SQL, Python, Power BI, DAX, and Excel.',
+  imageAlt = 'Alec Gany healthcare analytics portfolio',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const ogImage = new URL(withBase('images/og.png'), Astro.site ?? Astro.url.origin);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alec Gany',
+  url: new URL(withBase(''), Astro.site ?? Astro.url.origin).href,
+  email: 'mailto:agany524@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Madison',
+    addressRegion: 'WI',
+    addressCountry: 'US',
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Franciscan University of Steubenville',
+  },
+  sameAs: ['https://github.com/agany52', 'https://linkedin.com/in/alec-gany'],
+  knowsAbout: ['Healthcare analytics', 'Applied data science', 'SQL', 'Python', 'Power BI', 'Operational analytics'],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#102238" />
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href={withBase('favicon.png')} />
+    <link rel="apple-touch-icon" href={withBase('apple-touch-icon.png')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <title>{title}</title>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

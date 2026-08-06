@@ -1,0 +1,34 @@
+---
+import { withBase } from '../lib/urls';
+
+const home = withBase('');
+---
+
+<header class="site-header" data-site-header>
+  <div class="nav-shell">
+    <a class="brand" href={home}>
+      <span class="brand-mark" aria-hidden="true">AG</span>
+      <span class="brand-name">Alec Gany</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href={`${home}#projects`}>Projects</a>
+      <a href={`${home}#experience`}>Experience</a>
+      <a href={`${home}#toolkit`}>Toolkit</a>
+      <a href={`${home}#about`}>About</a>
+    </nav>
+
+    <a class="button button-small button-outline header-contact" href="mailto:agany524@gmail.com">Contact</a>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation menu">Menu</summary>
+      <nav aria-label="Mobile navigation">
+        <a href={`${home}#projects`}>Projects</a>
+        <a href={`${home}#experience`}>Experience</a>
+        <a href={`${home}#toolkit`}>Toolkit</a>
+        <a href={`${home}#about`}>About</a>
+        <a href="mailto:agany524@gmail.com">Contact</a>
+      </nav>
+    </details>
+  </div>
+</header>

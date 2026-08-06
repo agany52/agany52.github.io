@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import SyntheticOperationsFigure from './SyntheticOperationsFigure.astro';
+import SegaPlatformFigure from './SegaPlatformFigure.astro';
+import heartMatrix from '../assets/images/heart-confusion-matrix.jpg';
+
+interface Props {
+  kind: 'operations' | 'heart' | 'sega';
+}
+
+const { kind } = Astro.props;
+---
+
+<div class:list={['project-card-visual', `visual-${kind}`]}>
+  {kind === 'operations' && <SyntheticOperationsFigure compact decorative />}
+  {kind === 'heart' && (
+    <Image
+      src={heartMatrix}
+      alt="Held-out test-set confusion matrix at the 0.3 decision threshold."
+      widths={[420, 640, 840]}
+      sizes="(max-width: 760px) 92vw, 42vw"
+      format="webp"
+      loading="lazy"
+    />
+  )}
+  {kind === 'sega' && <SegaPlatformFigure compact decorative />}
+</div>

@@ -1,0 +1,154 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SyntheticOperationsFigure from '../../components/SyntheticOperationsFigure.astro';
+import SegaPlatformFigure from '../../components/SegaPlatformFigure.astro';
+import { withBase } from '../../lib/urls';
+import heartMatrix from '../../assets/images/heart-confusion-matrix.jpg';
+import segaTrend from '../../assets/images/sega-score-trends.jpg';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { data } = project;
+const title = `${data.title} | Alec Gany`;
+const imageMap = {
+  'heart-matrix': heartMatrix,
+  'sega-trend': segaTrend,
+};
+---
+
+<BaseLayout title={title} description={data.shortSummary} imageAlt={`${data.title} case study by Alec Gany`}>
+  <article class="case-study">
+    <header class="case-hero section-shell">
+      <a class="back-link" href={`${withBase('')}#projects`}><span aria-hidden="true">←</span> Back to projects</a>
+      <p class="eyebrow">{data.category}</p>
+      <h1>{data.title}</h1>
+      <p class="case-deck">{data.shortSummary}</p>
+      <ul class="tag-list case-tools" aria-label="Tools used">
+        {data.tools.map((tool) => <li>{tool}</li>)}
+      </ul>
+    </header>
+
+    <div class="case-body section-shell">
+      <aside class="case-index" aria-label="Case study contents">
+        <p>Case study</p>
+        <nav>
+          <a href="#summary">Executive summary</a>
+          <a href="#question">Question & scope</a>
+          <a href="#method">Method</a>
+          <a href="#findings">Findings</a>
+          <a href="#relevance">{data.recommendationLabel}</a>
+          <a href="#limitations">Limitations</a>
+          <a href="#visuals">Visuals</a>
+        </nav>
+      </aside>
+
+      <div class="case-content">
+        <section id="summary" class="case-section summary-section">
+          <p class="section-label">01 · Executive summary</p>
+          <h2>What this analysis shows</h2>
+          <p class="lead-paragraph">{data.executiveSummary}</p>
+        </section>
+
+        <section id="question" class="case-section split-section">
+          <div>
+            <p class="section-label">02 · Question</p>
+            <h2>The decision to clarify</h2>
+            <p>{data.question}</p>
+          </div>
+          <div class="scope-card">
+            <p class="mini-label">Data and scope</p>
+            <p>{data.scopeData}</p>
+          </div>
+        </section>
+
+        <section id="method" class="case-section">
+          <p class="section-label">03 · Method</p>
+          <h2>How the work was structured</h2>
+          <ol class="method-list">
+            {data.methodology.map((step, index) => (
+              <li><span>{String(index + 1).padStart(2, '0')}</span><p>{step}</p></li>
+            ))}
+          </ol>
+        </section>
+
+        <section id="findings" class="case-section findings-section">
+          <p class="section-label">04 · Findings</p>
+          <h2>What emerged from the analysis</h2>
+          <div class="finding-grid">
+            {data.findings.map((finding, index) => (
+              <article><span>{String(index + 1).padStart(2, '0')}</span><p>{finding}</p></article>
+            ))}
+          </div>
+        </section>
+
+        <section id="relevance" class="case-section recommendation-box">
+          <p class="section-label">05 · {data.recommendationLabel}</p>
+          <h2>{data.recommendation}</h2>
+        </section>
+
+        <section id="limitations" class="case-section limitations-box">
+          <div>
+            <p class="section-label">06 · Limitations</p>
+            <h2>What the evidence cannot establish</h2>
+          </div>
+          <ul>
+            {data.limitations.map((limitation) => <li>{limitation}</li>)}
+          </ul>
+        </section>
+
+        <section id="visuals" class="case-section visuals-section">
+          <p class="section-label">07 · Visuals</p>
+          <h2>Evidence at a glance</h2>
+          <div class="figure-list">
+            {data.visuals.map((visual) => (
+              <figure>
+                {visual.key === 'operations-synthetic' ? (
+                  <SyntheticOperationsFigure />
+                ) : visual.key === 'sega-platform' ? (
+                  <div class="figure-chart-panel">
+                    <SegaPlatformFigure />
+                  </div>
+                ) : (
+                  <a href={imageMap[visual.key as keyof typeof imageMap].src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size visual: ${visual.alt}`}>
+                    <Image
+                      src={imageMap[visual.key as keyof typeof imageMap]}
+                      alt={visual.alt}
+                      widths={[560, 840, 1120]}
+                      sizes="(max-width: 900px) 92vw, 760px"
+                      format="webp"
+                      loading="lazy"
+                    />
+                  </a>
+                )}
+                <figcaption>{visual.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section class="case-section case-actions">
+          <div>
+            <p class="section-label">Explore the work</p>
+            <h2>Review the source where it is publicly available.</h2>
+            {!data.codeUrl && <p>The operational analysis is not present in the linked public repositories, so no code link is presented here.</p>}
+          </div>
+          <div>
+            {data.codeUrl && <a class="button button-primary" href={data.codeUrl} target="_blank" rel="noopener noreferrer">{data.codeLabel} <span aria-hidden="true">↗</span></a>}
+            {data.secondaryUrl && <a class="button button-secondary" href={data.secondaryUrl} target="_blank" rel="noopener noreferrer">{data.secondaryLabel} <span aria-hidden="true">↗</span></a>}
+            <a class="text-link" href={`${withBase('')}#projects`}>Back to all projects <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

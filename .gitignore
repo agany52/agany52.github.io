@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+work/
+outputs/
+lighthouse-report.*
+test-results/
+/assets/
+/resume/
+/mockup/
+/PASTE_THIS_INTO_CODEX.txt
