@@ -28,7 +28,7 @@ tools:
   - Power BI
   - DAX
   - Kaggle data
-featuredOrder: 3
+featuredOrder: 4
 codeUrl: https://github.com/agany52/Python-Machine-Learning-Projects/blob/main/Sega%20Games%20Database/Sega_Games_Database.ipynb
 codeLabel: View analysis notebook
 visuals:

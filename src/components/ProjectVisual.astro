@@ -3,9 +3,10 @@ import { Image } from 'astro:assets';
 import SyntheticOperationsFigure from './SyntheticOperationsFigure.astro';
 import SegaPlatformFigure from './SegaPlatformFigure.astro';
 import heartMatrix from '../assets/images/heart-confusion-matrix.jpg';
+import healthcareReconciliation from '../assets/images/healthcare-reconciliation-results.png';
 
 interface Props {
-  kind: 'operations' | 'heart' | 'sega';
+  kind: 'operations' | 'heart' | 'sega' | 'healthcare';
 }
 
 const { kind } = Astro.props;
@@ -24,4 +25,14 @@ const { kind } = Astro.props;
     />
   )}
   {kind === 'sega' && <SegaPlatformFigure compact decorative />}
+  {kind === 'healthcare' && (
+    <Image
+      src={healthcareReconciliation}
+      alt="Reconciliation results for three fictional hospital client loads, each with a PASS status."
+      widths={[420, 640, 840]}
+      sizes="(max-width: 760px) 92vw, 42vw"
+      format="webp"
+      loading="lazy"
+    />
+  )}
 </div>

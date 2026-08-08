@@ -23,7 +23,16 @@ const projects = defineCollection({
     secondaryUrl: z.url().optional(),
     secondaryLabel: z.string().optional(),
     visuals: z.array(z.object({
-      key: z.enum(['operations-synthetic', 'heart-matrix', 'sega-platform', 'sega-trend']),
+      key: z.enum([
+        'operations-synthetic',
+        'heart-matrix',
+        'sega-platform',
+        'sega-trend',
+        'healthcare-reconciliation',
+        'healthcare-validation',
+        'healthcare-run-history',
+        'healthcare-production',
+      ]),
       alt: z.string(),
       caption: z.string(),
     })),

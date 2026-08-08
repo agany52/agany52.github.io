@@ -28,7 +28,7 @@ tools:
   - scikit-learn
   - Random Forest
   - Streamlit prototype
-featuredOrder: 2
+featuredOrder: 3
 codeUrl: https://github.com/agany52/Python-Machine-Learning-Projects/blob/main/Heart%20Disease%20Kaggle%20Dataset/Heart_Disease_Kaggle_Dataset_%2B_Mode.ipynb
 codeLabel: View analysis notebook
 secondaryUrl: https://github.com/agany52/heart-disease-predictor

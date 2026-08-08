@@ -28,7 +28,7 @@ tools:
   - Operational reporting
   - Descriptive analysis
   - Weather context
-featuredOrder: 1
+featuredOrder: 2
 visuals:
   - key: operations-synthetic
     alt: Synthetic bar-chart profile showing small differences among weather categories and a larger weekend capacity constraint.

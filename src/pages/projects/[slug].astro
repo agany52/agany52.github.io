@@ -7,6 +7,10 @@ import SegaPlatformFigure from '../../components/SegaPlatformFigure.astro';
 import { withBase } from '../../lib/urls';
 import heartMatrix from '../../assets/images/heart-confusion-matrix.jpg';
 import segaTrend from '../../assets/images/sega-score-trends.jpg';
+import healthcareReconciliation from '../../assets/images/healthcare-reconciliation-results.png';
+import healthcareValidation from '../../assets/images/healthcare-validation-errors.png';
+import healthcareRunHistory from '../../assets/images/healthcare-pipeline-run-history.png';
+import healthcareProduction from '../../assets/images/healthcare-production-encounters.png';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -23,6 +27,10 @@ const title = `${data.title} | Alec Gany`;
 const imageMap = {
   'heart-matrix': heartMatrix,
   'sega-trend': segaTrend,
+  'healthcare-reconciliation': healthcareReconciliation,
+  'healthcare-validation': healthcareValidation,
+  'healthcare-run-history': healthcareRunHistory,
+  'healthcare-production': healthcareProduction,
 };
 ---
 

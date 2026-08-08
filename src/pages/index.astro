@@ -9,16 +9,19 @@ import tornadoMap from '../assets/images/southeast-tornado-map.png';
 
 const projects = (await getCollection('projects')).sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
 const visualBySlug = {
+  'healthcare-client-data-pipeline': 'healthcare',
   'operational-capacity-analysis': 'operations',
   'heart-disease-risk-prediction': 'heart',
   'sega-portfolio-analysis': 'sega',
 } as const;
 const shortTools: Record<string, string[]> = {
+  'healthcare-client-data-pipeline': ['SQL Server', 'T-SQL', 'ETL', 'Data Quality', 'Stored Procedures'],
   'operational-capacity-analysis': ['Google Sheets', 'Operations', 'Weather context'],
   'heart-disease-risk-prediction': ['Python', 'scikit-learn', 'Random Forest'],
   'sega-portfolio-analysis': ['Python', 'Power BI', 'DAX'],
 };
 const evidenceBySlug: Record<string, string> = {
+  'healthcare-client-data-pipeline': '24 synthetic source rows reconciled into 14 clean production encounters and 10 documented rejections; all three client checks passed.',
   'operational-capacity-analysis': 'Weekend scheduling operated closer to reported capacity; donation mix mattered more than weather alone.',
   'heart-disease-risk-prediction': 'Recall increased from 75% to about 90% at a 0.3 threshold, with 3 false negatives among 32 positive test cases.',
   'sega-portfolio-analysis': '1,402 records analyzed; PC represented 391 titles and showed greater user-score variability.',
