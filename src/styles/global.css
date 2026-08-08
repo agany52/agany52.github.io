@@ -618,6 +618,15 @@ h3 {
   background: white;
 }
 
+@media (min-width: 1025px) {
+  .project-card.featured .visual-healthcare > img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 0.75rem;
+  }
+}
+
 .visual-heart {
   background:
     radial-gradient(circle at 15% 8%, rgba(201, 240, 107, 0.42), transparent 18rem),
