@@ -37,7 +37,7 @@ Work in a regulated, capacity-constrained clinical environment coordinating dono
 ### Epic Systems
 **Technical Solutions Engineer**
 
-Investigated software, data, and healthcare workflow issues across Epic Prelude, Cadence, and Real-Time Eligibility. Contributed to remediation of more than 40,000 patient records while maintaining data integrity, documenting findings, and communicating with technical and nontechnical stakeholders.
+Supported troubleshooting of healthcare software and workflow issues across Epic Prelude, Cadence, and Real-Time Eligibility. On a remediation effort involving more than 40,000 patient records, worked with a mentor and technical specialists, ran MUMPS-based code in test environments, and helped customers validate proposed corrections.
 
 ### Franciscan University of Steubenville
 **B.S. Applied Mathematics · Magna Cum Laude · 3.8 GPA**
