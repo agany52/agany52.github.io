@@ -1,8 +1,8 @@
 ---
 title: Sega Portfolio Analysis
 category: Strategic analytics and business intelligence
-shortSummary: Python data preparation, Power BI modeling, and DAX measures were used to examine platform mix and user-score volatility across more than 1,400 historical titles.
-executiveSummary: This project combined Python data preparation with Power BI reporting to examine Sega's historical software portfolio. The cleaned dataset was modeled for interactive analysis across platform, time, release volume, and user reception. The findings frame a quality-assurance recommendation rather than claim an observed business outcome.
+shortSummary: Cleaned 1,402 Sega game records with Python, then used Power BI and DAX to compare platform mix and user-score variation. See platform and score visuals below.
+executiveSummary: This independent BI case study cleans historical Sega release data in Python and models it in Power BI. The platform chart below makes release mix easy to scan; the score-trend image shows one Power BI view comparing PC and iOS user scores. Together they support a discussion of portfolio volatility and quality assurance, not a claim of commercial impact. This page provides screenshots and an analysis notebook, not a publicly hosted interactive Power BI report.
 question: How did Sega's historical release mix change across platforms, and where did user reception appear most variable?
 scopeData: More than 1,400 historical game records from the public Kaggle Sega Games dataset. The analysis grouped long-tail platforms, cleaned text fields, and modeled release counts and user scores for descriptive portfolio analysis.
 methodology:
@@ -37,5 +37,5 @@ visuals:
     caption: Publication-ready reconstruction of the notebook's final platform counts. The top eight platform groups are shown individually and the remaining 13 are combined.
   - key: sega-trend
     alt: Power BI line chart comparing average user scores over time for PC and iOS titles.
-    caption: Average user-score trends illustrate greater variation among PC releases in the analyzed sample.
+    caption: "Power BI report view: average user-score trends for PC and iOS help illustrate variation in this dataset. This is a static image; the interactive .pbix report is not publicly embedded."
 ---
