@@ -5,7 +5,7 @@ This is approved-direction draft copy. Edit for web rhythm, but preserve factual
 ## Hero
 
 ### Eyebrow
-Applied Mathematics · Healthcare Technology · Data Analytics
+Mathematics · Healthcare Technology · Data Analytics
 
 ### Headline
 Healthcare analytics grounded in mathematics, technology, and frontline operations.
@@ -23,7 +23,7 @@ Madison, WI · Open to remote, hybrid, and relocation opportunities
 
 ## Short About
 
-My strongest work sits where technical detail meets human consequence. I earned a B.S. in Applied Mathematics, supported healthcare software and data workflows at Epic, and now work inside a highly regulated frontline healthcare operation. That combination shapes how I approach analysis: define the decision clearly, respect the limits of the data, and explain the result so someone can act on it.
+My strongest work sits where technical detail meets human consequence. I earned a B.S. in Mathematics, supported healthcare software and data workflows at Epic, and now work inside a highly regulated frontline healthcare operation. That combination shapes how I approach analysis: define the decision clearly, respect the limits of the data, and explain the result so someone can act on it.
 
 I am most interested in healthcare analytics, applied data science, business intelligence, operational analytics, and systems roles where analytical work improves how care and services are delivered.
 
@@ -40,7 +40,7 @@ Work in a regulated, capacity-constrained clinical environment coordinating dono
 Supported troubleshooting of healthcare software and workflow issues across Epic Prelude, Cadence, and Real-Time Eligibility. On a remediation effort involving more than 40,000 patient records, worked with a mentor and technical specialists, ran MUMPS-based code in test environments, and helped customers validate proposed corrections.
 
 ### Franciscan University of Steubenville
-**B.S. Applied Mathematics · Magna Cum Laude · 3.8 GPA**
+**B.S. Mathematics · Magna Cum Laude · 3.8 GPA**
 
 Developed a rigorous foundation in quantitative reasoning, modeling, and structured problem solving.
 
