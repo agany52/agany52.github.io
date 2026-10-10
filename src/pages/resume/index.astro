@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/urls';
+---
+<BaseLayout title="Résumé | Alec Gany" description="Alec Gany — B.S. Mathematics, healthcare technical support, SQL, Python, Power BI, and operational experience.">
+  <article class="section-shell section-block" style="max-width: 850px; margin-inline: auto;">
+    <a class="back-link" href={withBase('')}>← Back to portfolio</a>
+    <p class="eyebrow">Current résumé · Web edition</p>
+    <h1>Alec Gany</h1>
+    <p class="lead-paragraph">Healthcare Data Analytics · Business Intelligence · Systems Analysis</p>
+    <p>Madison, Wisconsin · <a href="mailto:agany524@gmail.com">Email</a> · <a href="https://github.com/agany52">GitHub</a> · <a href="https://linkedin.com/in/alec-gany">LinkedIn</a></p>
+    <p style="margin-block: 1.5rem;">B.S. Mathematics graduate with experience in Epic healthcare technology, regulated clinical operations, and independent SQL, Python, and Power BI projects. Interested in data quality, reporting, healthcare analytics, and systems or operations roles.</p>
+    <section style="margin-block: 2rem;"><h2>Technical skills</h2><p>SQL Server · T-SQL · Python · Pandas · Power BI · DAX · Excel · Google Sheets · data validation · ETL · Epic Prelude, Cadence, Real-Time Eligibility · MUMPS</p></section>
+    <section style="margin-block: 2rem;"><h2>Professional experience</h2>
+      <h3>American Red Cross — Blood Collections Technician I / Phlebotomy Instructor</h3><p><strong>Aug 2023–Present · Madison, WI</strong></p>
+      <ul><li>Coordinate donor flow, equipment, documentation, and competing priorities in a regulated, capacity-constrained clinical environment.</li><li>Train and coach staff on procedures, equipment, safety requirements, and quality standards; completed team-lead and drive-lead training.</li><li>Use schedules and operational reports to recognize bottlenecks and support safe, timely service.</li></ul>
+      <h3 style="margin-top: 1.5rem;">Epic Systems — Technical Solutions Engineer</h3><p><strong>Aug 2022–Mar 2023 · Verona, WI</strong></p>
+      <ul><li>Supported troubleshooting of healthcare software and workflow issues across Epic Prelude, Cadence, and Real-Time Eligibility.</li><li>During a remediation effort involving more than 40,000 patient records, worked with a mentor and technical experts, ran MUMPS-based code in test environments, and supported customer verification of proposed corrections.</li><li>Communicated technical issues with customer and project stakeholders.</li></ul>
+    </section>
+    <section style="margin-block: 2rem;"><h2>Selected independent projects</h2>
+      <h3><a href={withBase('projects/healthcare-client-data-pipeline/')}>Healthcare Client Data Intake & Quality Pipeline</a></h3><p>Created a SQL Server ETL pipeline for 24 synthetic encounter records from three fictional hospitals. Validated, standardized, and reconciled 14 accepted rows and 10 logged rejections, with duplicate prevention and run auditing.</p>
+      <h3><a href={withBase('projects/operational-capacity-analysis/')}>Operational Capacity Analysis</a></h3><p>Analyzed anonymized scheduling, capacity, donation-mix, calendar, and weather information; assessed constraints on weekends and platelet-heavy schedules.</p>
+      <h3><a href={withBase('projects/heart-disease-risk-prediction/')}>Heart Disease Risk Prediction</a></h3><p>Built an exploratory Python Random Forest classifier; adjusted its threshold to prioritize recall. Results are not clinical validation.</p>
+      <h3><a href={withBase('projects/sega-portfolio-analysis/')}>Sega Portfolio Analysis</a></h3><p>Used Python, Power BI, and DAX to evaluate platform mix and score variation in 1,402 historical records.</p>
+    </section>
+    <section style="margin-block: 2rem;"><h2>Education & professional development</h2><p><strong>Franciscan University of Steubenville</strong> — B.S. Mathematics, Magna Cum Laude, GPA 3.8 (May 2022).</p><p><strong>Machine Learning Specialization</strong> — Stanford Online & DeepLearning.AI via Coursera, three courses, completed November 2025.</p></section>
+    <p style="font-size: 0.9rem;">This up-to-date web résumé replaces the outdated PDF as the main portfolio link while the revised PDF is prepared for repository upload.</p>
+  </article>
+</BaseLayout>
