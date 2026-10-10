@@ -1,7 +1,7 @@
 ---
 title: Healthcare Client Data Intake & Quality Pipeline
 category: Healthcare data engineering
-shortSummary: SQL Server portfolio ETL: 24 synthetic encounter records from three fictional clients, 14 accepted, 10 logged rejections, and passing source-to-output reconciliation checks.
+shortSummary: 'SQL Server portfolio ETL: 24 synthetic encounter records from three fictional clients, 14 accepted, 10 logged rejections, and passing source-to-output reconciliation checks.'
 executiveSummary: Three fictional hospital clients submit encounter data in different formats. This independent SQL Server portfolio pipeline keeps the originals, validates and standardizes records, logs failures, and loads valid encounters into a shared model. The demonstrated run reconciles every source row—24 input records become 14 accepted encounters plus 10 documented rejections. Screenshots below show the reconciliation, rejected rows, run audit, and resulting production table.
 question: How can differently formatted client encounter files be loaded into one reliable model while preserving source data, documenting quality failures, preventing duplicates, and proving row-count completeness?
 scopeData: Synthetic encounter records from three fictional hospitals. Madison General supplies 8 rows using YYYY-MM-DD dates; Lakeshore Medical Center supplies 6 rows with alternate fields, MM/DD/YYYY dates, and currency symbols; Prairie Valley Health supplies 10 rows using YYYY/MM/DD dates and includes invalid and duplicate examples. No real hospitals, patients, or protected health information are represented.
